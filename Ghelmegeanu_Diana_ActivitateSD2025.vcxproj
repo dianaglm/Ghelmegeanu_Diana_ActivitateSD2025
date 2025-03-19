@@ -128,6 +128,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="seminar.c" />
+    <ClCompile Include="Seminar02.c" />
+    <ClCompile Include="task_suplim.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -10,13 +10,23 @@ struct Gradinita {
 	char* numeDirector;
 	float fonduri;
 };
+typedef struct Gradinita Gradinita;
 
-//Realizati o functie cu ajutorul careia sa cititi de la tastatura un articol de tipul construit de
-//voi.Funcția returnează obiectul citit.
-
-struct Gradinita citire()
+void adaugaUnitate(struct Gradinita** gr, int* nr, struct Gradinita gradinitaNoua)
 {
-	struct Gradinita gradinita;
+	struct Gradinita* aux = (struct Gradinita*)malloc(sizeof(gradinitaNoua) * ((*nr) + 1));
+	for (int i = 0; i < *nr; i++) {
+		aux[i] = (*gr)[i];
+	}
+	aux[(*nr)] = gradinitaNoua;
+	free(*gr);
+	(*gr) = aux;
+	(*nr)++;
+}
+
+struct Gradinita citire(Gradinita* unitati, int* nr)
+{
+	Gradinita gradinita;
 	char buffer[100];
 
 	printf("Id: ");
@@ -37,6 +47,7 @@ struct Gradinita citire()
 	strcpy(gradinita.numeDirector, buffer);
 	printf("Fonduri accesate (mil EUR): ");
 	scanf("%.2f", &gradinita.fonduri);
+	adaugaUnitate(unitati,nr,gradinita);
 	return gradinita;
 }
 
@@ -48,9 +59,24 @@ void afisare(struct Gradinita g) {
 	printf("Fonduri accesate: %f \n", g.fonduri);
 }
 
+void afisareVectorUnitati(Gradinita* gr, int nr) {
+	for (int i = 0; i < nr; i++) {
+		afisare(gr[i]);
+	}
+}
+
+// Realizati o functie care calculeaza ceva pentru un obiect de tipul implementat de voi.
+// (o medie sau o suma, un maxim, un minim...sau orice altceva)
+
+
+//Realizati o functie care modifica pentru un obiect primit ca parametru, un anumit camp.
+//noua valoare este primita ca parametru.
+
 int main()
 {
-	struct Gradinita unitate = citire();
-	afisare(unitate);
+	int nr = 0;
+	struct Gradinita* unitati = NULL;
+	struct Gradinita unitate = citire(unitati,nr);
+	afisareVectorUnitati(unitati, nr);
 	return 0;
 }
