@@ -192,7 +192,21 @@ void dezalocareCoadaDeMasini(/*coada*/) {
 //metode de procesare
 Masina getMasinaByID(/*stiva sau coada de masini*/int id);
 
-float calculeazaPretTotal(/*stiva sau coada de masini*/);
+float calculeazaPretTotal(Nod* stiva) {
+	Nod* temp = NULL;
+	float suma = 0;
+	while (!isemptyStack(stiva))
+	{
+		Masina m = popStack(stiva);
+		suma += m.pret;
+		pushStack((&temp), m);
+	}
+	while (!isemptyStack(temp))
+	{
+		pushStack(stiva, popStack((&temp)));
+	}
+	return suma;
+}
 
 int main() {
 	Nod** stiva = citireStivaDeMasiniDinFisier("masini.txt");
