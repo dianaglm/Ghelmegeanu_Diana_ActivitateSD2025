@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{db8478c0-f7dc-46fe-a0db-4d7d00b0d8b4}</ProjectGuid>
-    <RootNamespace>GhelmegeanuDianaActivitateSD2025</RootNamespace>
+    <ProjectGuid>{14b68952-4e68-409a-9e6c-0d063ce790c2}</ProjectGuid>
+    <RootNamespace>seminar8</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,11 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="heap.c" />
-    <ClCompile Include="seminar.c" />
-    <ClCompile Include="Seminar02.c" />
-    <ClCompile Include="seminar11.c" />
-    <ClCompile Include="task_suplim.c" />
+    <ClCompile Include="seminar8.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

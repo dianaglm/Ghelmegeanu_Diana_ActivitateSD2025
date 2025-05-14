@@ -15,19 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="seminar.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Seminar02.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="task_suplim.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="heap.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="seminar11.c">
+    <ClCompile Include="seminar8.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
